@@ -1,0 +1,294 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+   <head>
+      <#if .locale == "ru_RU">
+      <link name="verdana" type="font" subtype="opentype" src="${nsfont.verdana}" src-bold="${nsfont.verdana_bold}" bytes="2" />
+      </#if>
+      <macrolist>
+         <macro id="nlheader">
+            <table class="header" style="width: 100%;">
+               <tr>
+                  <td align="left" rowspan="3"><#if record.subsidiary.internalid == "6"><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=2989&amp;c=4558680&amp;h=52b4bcef25a0d9441fc1" style="float: left; margin: 7px; height: 41px; width: 225px;"/><#else><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=267434&amp;c=4558680&amp;h=440d0155f0ff3a3cd502" style="float: left; margin: 7px; height: 41px; width: 160px;"/></#if><br /><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+                  <td align="left">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td align="left"><b>${record@title?upper_case}</b></td>
+               </tr>
+               <tr>
+                  <td align="right">&nbsp;</td>
+               </tr>
+            </table>
+         </macro>
+         <macro id="nlfooter">
+            <table class="footer" style="width: 100%;" border-top="1px">
+               <tr>
+                  <td colspan="2" rowspan="4" style="font-size: 7pt;">${subsidiary.mainaddress_text}</td>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2">Phone: ${subsidiary.fax}</td>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2">Bank Details:</td>
+               </tr>
+               <tr>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2">Email: ${subsidiary.email}</td>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2"><#if record.subsidiary.internalid == "6">SWIFT Code:&nbsp;CHASUS33<#else>SWIFT Code:&nbsp;BOFAUS3N</#if></td>
+               </tr>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2">Homepage: http://www.questback.com</td>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2"><#if record.subsidiary.internalid == "6">Routing#&nbsp;021000021<#else>Routing#&nbsp;111000025</#if></td>
+               </tr>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td style="font-size: 7pt;" colspan="2"><#if record.subsidiary.internalid == "6">Account No:&nbsp;746079938<#else>Account No:&nbsp;488038496169</#if></td>
+               </tr>
+              <tr>
+                  <td colspan="7" style="font-size: 7pt;">&nbsp;</td>
+               </tr>
+              <tr>
+                  <td colspan="7" style="font-size: 7pt;">Invoices paid late will incur 5% interest fees from due date and may experience an interruption in services.</td>
+               </tr>
+            </table>
+         </macro>
+      </macrolist>
+      <style type="text/css">table {
+         <#if .locale == "zh_CN">
+         font-family: stsong, sans-serif;
+         <#elseif .locale == "zh_TW">
+         font-family: msung, sans-serif;
+         <#elseif .locale == "ja_JP">
+         font-family: heiseimin, sans-serif;
+         <#elseif .locale == "ko_KR">
+         font-family: hygothic, sans-serif;
+         <#elseif .locale == "ru_RU">
+         font-family: verdana;
+         <#else>
+         font-family: sans-serif;
+         </#if>
+         font-size: 9pt;
+         table-layout: fixed;
+         }
+         th {
+         font-weight: bold;
+         font-size: 8pt;
+         vertical-align: middle;
+<!--         padding: 5px 6px 3px; -->
+<!--         background-color: #e3e3e3; 
+         color: #333333; -->
+         }
+<!--         td {
+         padding: 4px 6px;
+         } -->
+         b {
+         font-weight: bold;
+         color: #333333;
+         }
+         table.header td {
+         padding: 0px;
+         font-size: 10pt;
+         }
+         table.footer td {
+         padding: 0px;
+         font-size: 8pt;
+         }
+         table.itemtable th {
+         padding-bottom: 0px;
+         padding-top: 0px;
+         }
+         table.body td {
+         padding-top: 0px;
+         }
+         table.total {
+         page-break-inside: avoid;
+         }
+         tr.totalrow {
+         background-color: #e3e3e3;
+         line-height: 200%;
+         }
+         td.totalboxtop {
+         font-size: 12pt;
+         background-color: #e3e3e3;
+         }
+         td.addressheader {
+         font-size: 8pt;
+         padding-top: 6px;
+         padding-bottom: 2px;
+         }
+         td.address {
+         padding-top: 0px;
+         }
+         td.totalboxmid {
+         font-size: 28pt;
+         padding-top: 20px;
+         background-color: #e3e3e3;
+         }
+         td.totalboxbot {
+         background-color: #e3e3e3;
+         font-weight: bold;
+         }
+         span.title {
+         font-size: 28pt;
+         }
+         span.number {
+         font-size: 16pt;
+         }
+         span.itemname {
+         font-weight: bold;
+         line-height: 150%;
+         }
+         hr {
+         width: 100%;
+         color: #d3d3d3;
+         background-color: #d3d3d3;
+         height: 1px;
+         }
+         p{
+         text-align: left;
+         }
+      </style>
+   </head>
+   <body header="nlheader" header-height="5%" footer="nlfooter" footer-height="6%" padding="0.5in 0.5in 0.5in 0.5in" size="Letter">
+      <table class="body" style="width: 100%; margin-top: 10px;">
+         <tr>
+            <td style="font-size: 8pt;" colspan="2"><b><i>Billing Address:</i></b></td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>${record.trandate@label}:</b></td>
+            <td style="font-size: 8pt;">${record.trandate}</td>
+         </tr>
+         <tr>
+            <td colspan="2" rowspan="4" style="font-size: 8pt;">${record.billaddress}</td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Customer Number:</b></td>
+            <td style="font-size: 8pt;">${record.entity.entityid}</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Invoice Number:</b></td>
+            <td style="font-size: 8pt;">${record.tranid}</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Terms of Payment</b></td>
+            <td style="font-size: 8pt;">${record.terms}</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Due Date:</b></td>
+            <td style="font-size: 8pt;">${record.duedate}</td>
+         </tr>
+         <tr>
+            <td colspan="2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Interest Rate:</b></td>
+            <td style="font-size: 8pt;">&nbsp;</td>
+         </tr>
+         <tr>
+            <td colspan="2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Currency:</b></td>
+            <td style="font-size: 8pt;">${record.currency}</td>
+         </tr>
+         <tr>
+            <td colspan="2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>Order Reference:</b></td>
+            <td style="font-size: 8pt;">${record.otherrefnum}</td>
+         </tr>
+         <tr>
+            <td colspan="2">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td colspan="2" style="font-size: 8pt;"><b>&nbsp;</b></td>
+            <td style="font-size: 8pt;">&nbsp;</td>
+         </tr>
+         <tr>
+            <td style="font-size: 8pt;" colspan="2"><b><i>Customer Address:</i></b></td>
+            <td>&nbsp;</td>
+            <td colspan="2"><b>&nbsp;</b></td>
+            <td>&nbsp;</td>
+         </tr>
+         <tr>
+            <td colspan="2" rowspan="4" style="font-size: 8pt;">${record.entity.billaddress}</td>
+            <td>&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+            <td>&nbsp;</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2"><b>&nbsp;</b></td>
+            <td>&nbsp;</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2"><b>&nbsp;</b></td>
+            <td>&nbsp;</td>
+         </tr>
+         <tr>
+            <td>&nbsp;</td>
+            <td colspan="2"><b>&nbsp;</b></td>
+            <td>&nbsp;</td>
+         </tr>
+      </table>
+
+
+
+      <#if record.item?has_content>
+      <table class="itemtable" style="width: 100%; margin-top: 10px;">
+         <!-- start items --><#list record.item as item><#if item_index==0>
+         <thead>
+            <tr>
+               <th style="font-size: 8pt;" align="left" colspan="5" border-bottom="1px"><b>Product</b></th>
+               <th style="font-size: 8pt;" align="center" border-bottom="1px" colspan="4"><b>Product Code</b></th>
+               <th style="font-size: 8pt;" align="right" border-bottom="1px" colspan="3"><b>Quantity</b></th>
+               <th style="font-size: 8pt;" align="center" border-bottom="1px"><b>Unit</b></th>
+               <th style="font-size: 8pt;" align="center" border-bottom="1px" colspan="6"><b>Description</b></th>
+               <th style="font-size: 8pt;" align="center" border-bottom="1px" colspan="2"><b>Unit Price</b></th>
+            <th style="font-size: 8pt;" align="right" border-bottom="1px" colspan="3"><#if subsidiary.country = "United States"><b>Amount</b><#else><b>Gross Amount</b></#if></th>
+            </tr>
+         </thead>
+         </#if>
+         <tr>
+            <td style="font-size: 8pt;" align="left" colspan="5"><span style="white-space:nowrap;"><#if item.itemtype = "NonInvtPart" || item.itemtype = "Service">${item.custcol_product_code} - ${item.item.displayname}<#if item.custcol_salesforce_start_date?has_content><br />${item.custcol_salesforce_start_date} - ${item.custcol_salesforce_end_date}</#if><#else>${item.item}</#if></span></td>
+         <td style="font-size: 8pt;" align="center" colspan="4">${item.custcol_product_code}</td>
+         <td style="font-size: 8pt;" align="right" colspan="3">${item.quantity}</td>
+         <td style="font-size: 8pt;" align="center">${item.units}</td>
+         <td style="font-size: 8pt;" align="left" colspan="6">${item.description}</td>
+         <td style="font-size: 8pt;" align="center" colspan="2"><#if subsidiary.country = "United States"><#if item.rate == 0>&nbsp;<#else>${item.rate?string["#,###.00"]}</#if></#if></td>
+         <td style="font-size: 8pt;" align="right" colspan="3"><#if subsidiary.country = "United States">${item.amount?string["#,###.00"]}<#else>${item.grossamt?string["#,###.00"]}</#if></td>
+         </tr>
+         </#list><!-- end items -->
+      </table>
+<!--      <hr /> -->
+      </#if>
+      <table class="total" style="width: 100%; margin-top: 10px;">
+         <tr>
+            <td colspan="4" style="font-size: 8pt;">${record.custbody_invoice_text_field}</td>
+            <td style="font-size: 8pt;" align="right"><span style="white-space: nowrap;">Total Excluding Sales Tax:</span></td>
+            <td style="font-size: 8pt;" align="right">${record.subtotal?string["#,###.00"]}&nbsp;${record.currency.symbol}</td>
+         </tr>
+         <tr>
+            <td colspan="4">&nbsp;</td>
+            <td style="font-size: 8pt;" align="right">Sales Tax Total<#if record.taxtotal == 0>&nbsp;(0 %) <#else> <#list record.item as item><#if item_index==0>(${item.taxrate1})</#if></#list></#if></td>
+            <td style="font-size: 8pt;" align="right">${record.taxtotal?string["#,###0.00"]}&nbsp;${record.currency.symbol}</td>
+         </tr>
+         <tr class="totalrow">
+            <td background-color="#ffffff" colspan="4">&nbsp;</td>
+            <td style="font-size: 8pt;" align="right"><b>Invoice Total</b></td>
+            <td style="font-size: 8pt;" align="right"><b>${record.total?string["#,###.00"]}&nbsp;${record.currency.symbol}</b></td>
+         </tr>
+         <tr>
+          <td colspan="4">&nbsp;</td>
+          <td align="right" style="font-size: 8pt;"><#if record.custbody_deposit_amt != 0.00>Payment Received<#else>&nbsp;</#if></td>
+          <td align="right" style="font-size: 8pt;"><#if record.custbody_deposit_amt != 0.00>${record.custbody_deposit_amt?string["#,##0.00"]}&nbsp;${record.currency}<#else>&nbsp;</#if></td>
+        </tr>
+        <tr>
+          <td colspan="4">&nbsp;</td>
+          <td align="right" style="font-size: 8pt;"><#if record.custbody_deposit_amt  != 0.00>Balance Due<#else>&nbsp;</#if></td>
+          <td align="right" style="font-size: 8pt;"><#if record.custbody_deposit_amt  != 0.00><b>${record.amountremaining?replace("$"," ")}&nbsp;${record.currency}</b><#else>&nbsp;</#if></td>
+        </tr>
+      </table>
+   </body>
+</pdf>
