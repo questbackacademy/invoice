@@ -1,14 +1,13 @@
 <?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
 <pdf>
    <head>
-      <#if .locale == "ru_RU">
       <link name="verdana" type="font" subtype="opentype" src="${nsfont.verdana}" src-bold="${nsfont.verdana_bold}" bytes="2" />
       </#if>
       <macrolist>
          <macro id="nlheader">
             <table class="header" style="width: 100%;">
                <tr>
-                  <td align="left" rowspan="3"><#if record.subsidiary.internalid == "6"><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=2989&amp;c=4558680&amp;h=52b4bcef25a0d9441fc1" style="float: left; margin: 7px; height: 41px; width: 225px;"/><#else><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=267434&amp;c=4558680&amp;h=440d0155f0ff3a3cd502" style="float: left; margin: 7px; height: 41px; width: 160px;"/></#if><br /><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
+                  <td align="left" rowspan="3"><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=2989&amp;c=4558680&amp;h=52b4bcef25a0d9441fc1" style="float: left; margin: 7px; height: 41px; width: 225px;"/><#else><img src="https://system.eu2.netsuite.com/core/media/media.nl?id=267434&amp;c=4558680&amp;h=440d0155f0ff3a3cd502" style="float: left; margin: 7px; height: 41px; width: 160px;"/></#if><br /><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></td>
                   <td align="left">&nbsp;</td>
                </tr>
                <tr>
@@ -36,7 +35,7 @@
                </tr>
               <tr>
                   <td>&nbsp;</td>
-                  <td style="font-size: 7pt;" colspan="2">Homepage: http://www.questback.com</td>
+                  <td style="font-size: 7pt;" colspan="2">Homepage: <a>href= "http://www.questback.com">http://www.questback.com</a></td>
                   <td>&nbsp;</td>
                   <td style="font-size: 7pt;" colspan="2"><#if record.subsidiary.internalid == "6">Routing#&nbsp;021000021<#else>Routing#&nbsp;111000025</#if></td>
                </tr>
